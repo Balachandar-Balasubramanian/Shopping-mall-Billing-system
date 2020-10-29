@@ -267,16 +267,12 @@ class App{
                         File old=new File(oldFile);
                         File tempFile = new File("temp.txt");
                         try{
-                            //BufferedReader reader = new BufferedReader(new FileReader(inputFile));
                             BufferedWriter writer = new BufferedWriter(new FileWriter(tempFile));
-                    
-                            //String lineToRemove = s;
-                            //String currentLine;
+
                             for(int i=0;i<CurBill.size();i++){
                                 writer.write(CurBill.get(i) +"  "+ Quantity.get(i) +System.getProperty("line.separator"));
                             }
                             writer.close(); 
-                            //inputFile.delete();
                             old.delete();
                             tempFile.renameTo(old);
                         } 
@@ -291,7 +287,7 @@ class App{
             }
             if(ch==3){
                 try {
-                    //Scanner scn=new Scanner(System.in);
+               
                     
                     String mem=cnsl.readLine("Enter members's name: ");
                     BufferedReader br = new BufferedReader(new FileReader(mem+".txt"));
