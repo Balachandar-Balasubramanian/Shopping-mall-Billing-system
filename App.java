@@ -115,6 +115,9 @@ class App{
             load();
             int ch = Integer.parseInt(cnsl.readLine("Enter choice: "));  
             if(ch==1){
+                System.out.println();
+                System.out.println();
+                System.out.println();
                 String new_name=cnsl.readLine("Enter new user's username: ");
                 String new_pass =cnsl.readLine("create a password: ");
                 Cashuser.add(new_name);
@@ -134,6 +137,9 @@ class App{
                 System.out.println("New user "+new_name+" has been added..");
             }
             if (ch==2) {
+                System.out.println();
+                System.out.println();
+                System.out.println();
                 String rname=cnsl.readLine("Whom you need to remove:");
                 int i=Cashuser.indexOf(rname);
                 String rpass=Cashpass.get(i);
@@ -144,6 +150,9 @@ class App{
                 System.out.println(rname+" has been removed...");
             }
             if(ch==3){
+                System.out.println();
+                System.out.println();
+                System.out.println();
                 String new_product=cnsl.readLine("Enter Product's name: ");
                 String new_cost =cnsl.readLine("Enter its cost: ");
                 Products.add(new_product);
@@ -163,6 +172,9 @@ class App{
                 System.out.println("New product "+new_product+" has been added..");
             }
             if (ch==4) {
+                System.out.println();
+                System.out.println();
+                System.out.println();
                 String rprodu=cnsl.readLine("Which product you need to remove:");
                 int i=Products.indexOf(rprodu);
                 String rcost=Costs.get(i);
@@ -198,6 +210,9 @@ class App{
             load();
             int ch = Integer.parseInt(cnsl.readLine("Enter choice: "));
             if(ch==1){
+                System.out.println();
+                System.out.println();
+                System.out.println();
                 String new_mem=cnsl.readLine("Enter new members's name: ");
                 String new_mobile=cnsl.readLine("Enter "+new_mem+"'s mobile num: ");
                 Members.add(new_mem);
@@ -205,10 +220,8 @@ class App{
                     PrintWriter user = new PrintWriter(new BufferedWriter(new FileWriter("members.txt", true)));
                     user.println(new_mem);
                     user.println(new_mobile);
-                    user.println();
                     user.flush();
                     user.close();
-                    System.out.println(Members);
                 } catch (Exception e) {
                     System.out.println(e);
                 }
@@ -218,7 +231,10 @@ class App{
                 int total=0;
                 int m=0;
                 int sub=0;
-                String cus=cnsl.readLine("Enter Customer's name ");
+                System.out.println();
+                System.out.println();
+                System.out.println();
+                String cus=cnsl.readLine("Enter Customer's name: ");
                 for (int i = 0; Members.size() > i; i++) {
                     if (cus.equals(Members.get(i))) {
                         m = 1;
@@ -288,7 +304,9 @@ class App{
             if(ch==3){
                 try {
                
-                    
+                    System.out.println();
+                    System.out.println();
+                    System.out.println();
                     String mem=cnsl.readLine("Enter members's name: ");
                     BufferedReader br = new BufferedReader(new FileReader(mem+".txt"));
                     String line;
@@ -333,9 +351,12 @@ class App{
             int a = 0;
             header();
             System.out.println("                                                   LOGIN PAGE                                                                   ");
+
+
             username = cnsl.readLine("Enter username: ");
             char[] pw = cnsl.readPassword("Enter your password: ");
             String password = new String(pw);
+            
 
             if (username.equals("admin") & password.equals("admin")) {
                 a = 1;
