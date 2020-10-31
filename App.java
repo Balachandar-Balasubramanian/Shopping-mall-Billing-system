@@ -1,5 +1,6 @@
 import java.io.*;
 import java.util.*;
+import java.time.LocalTime;  
 
 class App{
     private static ArrayList <String> Cashuser;
@@ -20,7 +21,7 @@ class App{
         System.out.println("                                          Shopping Mall Billing system                                                         ");
         System.out.println("###############################################################################################################################");
         System.out.println("  Balachandar.B(2019PECCS373)     Augustin sham.J(2019PECCS369)       Gokulnath(2019PECCS405)        Amarnath.R(2019PECCS356)  ");
-        System.out.println("                                              Arul Vijo(2019PECCS359)                                                          ");
+        System.out.println("                                      Arul Vijo(2019PECCS359)     Babin Mon.B(2019PECCS370)                                    ");
         System.out.println("###############################################################################################################################");
     }
     public static void load(){
@@ -247,6 +248,7 @@ class App{
                 while(true){
                     String product = cnsl.readLine("Enter product name: ");
                     int quan=Integer.parseInt(cnsl.readLine("quantity: "));
+                    LocalTime time = LocalTime.now();  
                     int c=0;
                     for (int i = 0; Products.size() > i; i++) {
                         if (product.equals(Products.get(i))) {
@@ -277,7 +279,7 @@ class App{
                         System.out.format(format, CurBill.get(i), Curprice.get(i), Quantity.get(i),Subtotal.get(i));
                     }
                     System.out.println("####################################################################");
-                    System.out.println("                                                   Total:"+total);
+                    System.out.println("                                       Time:"+time+" Total:"+total);
                     if(m==1){
                         String oldFile=cus+".txt";
                         File old=new File(oldFile);
