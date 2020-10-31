@@ -1,6 +1,9 @@
 import java.io.*;
+import java.time.LocalDate;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
+import java.time.temporal.ChronoUnit;
 import java.util.*;
-import java.time.LocalTime;  
 
 class App{
     private static ArrayList <String> Cashuser;
@@ -248,7 +251,8 @@ class App{
                 while(true){
                     String product = cnsl.readLine("Enter product name: ");
                     int quan=Integer.parseInt(cnsl.readLine("quantity: "));
-                    LocalTime time = LocalTime.now();  
+                    LocalTime time = LocalTime.now().truncatedTo(ChronoUnit.SECONDS);
+                    LocalDate date = LocalDate.now();   
                     int c=0;
                     for (int i = 0; Products.size() > i; i++) {
                         if (product.equals(Products.get(i))) {
@@ -279,7 +283,7 @@ class App{
                         System.out.format(format, CurBill.get(i), Curprice.get(i), Quantity.get(i),Subtotal.get(i));
                     }
                     System.out.println("####################################################################");
-                    System.out.println("                                       Time:"+time+" Total:"+total);
+                    System.out.println("                            Date:"+date+" Time:"+time+" Total:"+total);
                     if(m==1){
                         String oldFile=cus+".txt";
                         File old=new File(oldFile);
